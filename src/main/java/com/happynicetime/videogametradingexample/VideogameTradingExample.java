@@ -13,14 +13,17 @@ public class VideogameTradingExample {
     static Player player2 = new Player();
     public static void main(String[] args) {
         player1.createItem("nectarine");
+        player1.createItem("nectarine");
         player1.createItem("orange");
         player2.createItem("avocado");
+        player2.createItem("avocado");
+        player2.createItem("nectarine");
         
         printPlayersItems();
         
         TradeOffer tradeOffer = new TradeOffer(player1,player2);
         tradeOffer.playerOneOffer(player1.items.get(0));
-        tradeOffer.playerOneOffer(player1.items.get(1));
+        tradeOffer.playerOneOffer(player1.items.get(2));
         tradeOffer.playerTwoOffer(player2.items.get(0));
         
         tradeOffer.player1Accept();

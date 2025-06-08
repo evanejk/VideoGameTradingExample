@@ -22,7 +22,7 @@ class Item {
         name = getItemNameFromID(itemId);
         this.owner = owner;
     }
-    private int getItemIdFromString(String itemString) {
+    private static int getItemIdFromString(String itemString) {
         int id = -1;
         switch(itemString){
             case "nectarine":
@@ -38,7 +38,7 @@ class Item {
         return id;
     }
 
-    private String getItemNameFromString(String itemString) {
+    private static String getItemNameFromString(String itemString) {
         String name = "";
         switch(itemString){
             case "nectarine":
@@ -54,7 +54,7 @@ class Item {
         return name;
     }
 
-    private String getItemNameFromID(int itemId) {
+    private static String getItemNameFromID(int itemId) {
         String name = "";
         switch(itemId){
             case 0:
