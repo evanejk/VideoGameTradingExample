@@ -1,4 +1,4 @@
-example of it's output
+example of its output
 
 help
 
