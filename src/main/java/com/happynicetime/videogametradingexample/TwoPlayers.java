@@ -8,9 +8,9 @@ package com.happynicetime.videogametradingexample;
  *
  * @author evane
  */
-class Item {
-    String name = "";
-    Item(String itemString) {
-        name = itemString;
-    }
+class TwoPlayers {
+
+    Player player1;
+    Player player2;
+    
 }

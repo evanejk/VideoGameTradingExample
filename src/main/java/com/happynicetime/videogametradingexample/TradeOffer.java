@@ -4,6 +4,7 @@
  */
 package com.happynicetime.videogametradingexample;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -18,7 +19,7 @@ class TradeOffer {
     boolean player1Accepted = false;
     boolean player2Accepted = false;
     TradeOffer(Player player1,Player player2){
-        System.out.printf("TradeOffer initialized%n");
+        //System.out.printf("TradeOffer initialized%n");
         this.player1 = player1;
         this.player2 = player2;
     }
@@ -62,6 +63,17 @@ class TradeOffer {
             }
             for(Item item : player1Offers){
                 player2.give(item);
+            }
+            deleteTradeOffer();
+        }
+    }
+
+    void deleteTradeOffer() {
+        Iterator<TradeOffer> iterator = VideogameTradingExample.tradeOffers.iterator();
+        while(iterator.hasNext()){
+            TradeOffer tradeOfferOn = iterator.next();
+            if(this == tradeOfferOn){
+                iterator.remove();
             }
         }
     }

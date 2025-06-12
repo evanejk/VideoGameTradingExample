@@ -12,32 +12,15 @@ import java.util.LinkedList;
  * @author evane
  */
 class Player {
-    LinkedList<Item> items = new LinkedList<>();
-    void createItem(String itemString) {
-        items.add(new Item(this, itemString));
+    String username = "";
+    Player(String username1) {
+        username = username1;
     }
-
-    void printItems() {
-        for(Item item:items){
-            System.out.printf("%s, ",item.name);
-        }
-        System.out.printf("%n");
-    }
-
     void take(Item item) {
-        item.owner = null;
-        for(Iterator<Item> iterator = items.iterator();iterator.hasNext();){
-            Item item2 = iterator.next();
-            if(item == item2){
-                iterator.remove();
-                break;
-            }
-        }
+        System.out.printf("Take item %s from username %s .%n",item.name,username);//extra space intended
     }
-
     void give(Item item) {
-        item.owner = this;
-        items.add(item);
+        System.out.printf("Give item %s to username %s .%n",item.name,username);//extra space intended
     }
     
 }
